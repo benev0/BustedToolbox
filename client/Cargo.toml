@@ -1,0 +1,11 @@
+[package]
+name = "client"
+version = "0.1.0"
+edition = "2021"
+
+[build]
+rustflags = [ "-C", "target-feature=-crt-static" ]
+
+[dependencies]
+raylib = "5.0.2"
+shared = { path = "../shared" }

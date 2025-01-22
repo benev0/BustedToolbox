@@ -1,0 +1,11 @@
+[package]
+name = "shared"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+flecs = "0.1.5"
+
+[lib]
+crate-type = ["cdylib"]
+bench = false

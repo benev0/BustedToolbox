@@ -1,0 +1,8 @@
+[workspace]
+name = "RustedToolbox"
+members = [
+    "client",
+    "server",
+    "shared",
+]
+exclude = []
