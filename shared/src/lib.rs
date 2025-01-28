@@ -1,16 +1,25 @@
-use flecs::*;
+use flecs_ecs::prelude::*;
 
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+#[derive(Debug, Component)]
+pub struct Position {
+    pub x: f32,
+    pub y: f32,
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+#[derive(Debug, Component)]
+pub struct Velocity {
+    pub x: f32,
+    pub y: f32,
+}
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+pub fn setup_core() -> World {
+    let world = World::new();
+    world
+        .system::<(& mut Position, &Velocity)>()
+        .each(|(pos, vel)| {
+            pos.x += vel.x;
+            pos.y += vel.y;
+        });
+
+    world
 }

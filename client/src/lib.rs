@@ -1,5 +1,10 @@
 use raylib::prelude::*;
 
+#[doc(hidden)]
+#[used]
+#[no_mangle]
+pub static __INTERNAL_BUSTED_TOOLBOX_BIN_NO_CLIENT_CODE: u8 = 0;
+
 pub fn main() {
     let (mut rl, thread) = raylib::init()
         .size(640, 480)
